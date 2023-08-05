@@ -1,17 +1,20 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import Header from './components/Header';
+import PrivateRoute from './utils/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
-      </Routes>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<PrivateRoute> <HomePage /></PrivateRoute>} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
