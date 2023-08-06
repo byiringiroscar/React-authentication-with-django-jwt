@@ -8,7 +8,7 @@ const Header = () => {
     <div>
         <Link to='/'>Home</Link>
         <span> | </span>
-        {user ? (<Link to='/login'>Logout</Link>): <Link to='/login'>Login</Link>}
+        {user ? (<p to='/login'>Logout</p>): <Link to='/login'>Login</Link>}
         {user && <p>Hello, {user.username}</p>}
     </div>
   )
